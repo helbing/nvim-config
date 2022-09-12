@@ -1,3 +1,10 @@
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -32,6 +39,12 @@ return require('packer').startup(function(use)
   }
   use 'arkav/lualine-lsp-progress'
 
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', 'moll/vim-bbye' }
+  }
+
   -- dashboard
   use 'glepnir/dashboard-nvim'
 
@@ -40,14 +53,7 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   })
-  use 'LinArcX/telescope-env.nvim'
   use 'ahmedkhalf/project.nvim'
-
-  -- bufferline
-  use {
-    'akinsho/bufferline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', 'moll/vim-bbye' }
-  }
 
   -- treesitter
   use {
@@ -55,15 +61,6 @@ return require('packer').startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
   }
   use 'p00f/nvim-ts-rainbow'
-
-  -- indent-blankline
-  use 'lukas-reineke/indent-blankline.nvim'
-
-  use {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig'
-  }
 
   -- nvim-surround
   use {
@@ -74,13 +71,4 @@ return require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
-end, {
-  config = {
-    max_jobs = 16,
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end,
-    }
-  }
-})
+end)
