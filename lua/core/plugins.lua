@@ -21,6 +21,9 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  -- impatient
+  use 'lewis6991/impatient.nvim'
+
   -- colorscheme
   use 'Mofiqul/dracula.nvim'
 
@@ -62,11 +65,14 @@ return require('packer').startup(function(use)
   }
   use 'p00f/nvim-ts-rainbow'
 
-  -- nvim-surround
-  use {
-    'kylechui/nvim-surround',
-    tag = "*"
-  }
+  -- surround
+  use 'kylechui/nvim-surround'
+
+  -- whichkey
+  use 'folke/which-key.nvim'
+
+  -- autopairs
+  use 'windwp/nvim-autopairs'
 
   if packer_bootstrap then
     require('packer').sync()

@@ -1,11 +1,12 @@
 local M = {}
 
 function M.config()
-  require('nvim-treesitter').setup({
+  local npairs = require("nvim-autopairs")
+  local rule = require('nvim-autopairs.rule')
+
+  require('nvim-treesitter.configs').setup({
     ensure_installed = {
-      'json', 'yaml', 'toml',
       'go', 'gomod', 'gowork',
-      'vim', 'lua'
     },
     auto_install = true,
     highlight = {

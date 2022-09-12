@@ -49,6 +49,7 @@ require('core.keymaps')
 require('core.plugins')
 
 -- plugins
+require('impatient') -- improve startup time for Neovim
 require('configs.nvim-tree').config()
 require('configs.lualine').config()
 require('configs.bufferline').config()
@@ -56,3 +57,4 @@ require('configs.dashboard').config()
 require('configs.telescope').config()
 require('configs.nvim-treesitter').config()
 require('configs.surround').config()
+require('configs.whichkey').config()
