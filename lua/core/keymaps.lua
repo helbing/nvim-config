@@ -39,7 +39,7 @@ map('n', '<C-d>', '10j', opt)
 map('v', 'p', '"_dP', opt)
 
 -- nvim-tree
-map('n', '<Leader>b', ':NvimTreeToggle<CR>', opt)
+map('n', '<F12>', ':NvimTreeToggle<CR>', opt)
 function M.nvimTree()
   return {
     { key = 'R', action = 'refresh' },
@@ -68,28 +68,51 @@ function M.nvimTree()
   }
 end
 
+-- bufferline
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- close
+map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<Leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<Leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<Leader>bc", ":BufferLinePickClose<CR>", opt)
+
 -- telescope
-map("n", "<Leader>fr", ":Telescope oldfiles<CR>", opt)
-map("n", "<Leader>fp", ":Telescope projects<CR>", opt)
-map("n", "<Leader>ff", ":Telescope find_files<CR>", opt)
-map("n", "<Leader>fg", ":Telescope live_grep<CR>", opt)
-map("n", "<Leader>fb", ":Telescope buffers<CR>", opt)
-map("n", "<Leader>fh", ":Telescope help_tags<CR>", opt)
+map('n', '<Leader>fr', ':Telescope oldfiles<CR>', opt)
+map('n', '<Leader>fp', ':Telescope projects<CR>', opt)
+
+map('n', '<Leader>ff', ':Telescope find_files<CR>', opt)
+map('n', '<Leader>fg', ':Telescope live_grep<CR>', opt)
+map('n', '<Leader>fb', ':Telescope buffers<CR>', opt)
+map('n', '<Leader>fh', ':Telescope help_tags<CR>', opt)
 
 function M.telescope()
   return {
     i = {
-      ["<C-j>"] = "move_selection_next",
-      ["<C-k>"] = "move_selection_previous",
-      ["<Down>"] = "move_selection_next",
-      ["<Up>"] = "move_selection_previous",
-      ["<C-n>"] = "cycle_history_next",
-      ["<C-p>"] = "cycle_history_prev",
-      ["<Esc>"] = "close",
-      ["<C-u>"] = "preview_scrolling_up",
-      ["<C-d>"] = "preview_scrolling_down",
+      ['<C-j>'] = 'move_selection_next',
+      ['<C-k>'] = 'move_selection_previous',
+      ['<Down>'] = 'move_selection_next',
+      ['<Up>'] = 'move_selection_previous',
+      ['<C-n>'] = 'cycle_history_next',
+      ['<C-p>'] = 'cycle_history_prev',
+      ['<Esc>'] = 'close',
+      ['<C-u>'] = 'preview_scrolling_up',
+      ['<C-d>'] = 'preview_scrolling_down',
     }
   }
 end
+
+-- gitsigns
+map('n', '<Leader>hn', ':Gitsigns next_hunk<CR>', opt)
+map('n', '<Leader>hp', ':Gitsigns preview_hunk<CR>', opt)
+map('n', '<Leader>hs', ':Gitsigns stage_hunk<CR>', opt)
+map('n', '<Leader>hu', ':Gitsigns undo_stage_hunk<CR>', opt)
+map('n', '<Leader>hr', ':Gitsigns reset_hunk<CR>', opt)
+map('n', '<Leader>hR', ':Gitsigns reset_buffer<CR>', opt)
+map('n', '<Leader>hs', ':<C-U>Gitsigns select_hunk<CR>', opt)
+map('n', '<Leader>hb', ':Gitsigns blame_line<CR>', opt)
+map('n', '<Leader>hB', '<cmd>lua require("gitsigns").blame_line{full=true}<CR>', opt)
+map('n', '<Leader>hd', ':Gitsigns diffthis<CR>', opt)
+map('n', '<Leader>hD', '<cmd>lua require("gitsigns").diffthis("~")<CR>', opt)
 
 return M
