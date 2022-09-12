@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons'
     }
   }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- lualine
   use {
@@ -73,6 +74,12 @@ return require('packer').startup(function(use)
 
   -- autopairs
   use 'windwp/nvim-autopairs'
+
+  -- toggleterm
+  use 'akinsho/toggleterm.nvim'
+
+  -- comment
+  use 'numToStr/Comment.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

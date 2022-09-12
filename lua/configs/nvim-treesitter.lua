@@ -30,6 +30,10 @@ function M.config()
       enable = true,
       extended_mode = true,
       max_file_lines = nil
+    },
+    -- JoosepAlviste/nvim-ts-context-commentstring
+    context_commentstring = {
+      enable = true
     }
   })
 
