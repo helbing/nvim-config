@@ -109,6 +109,9 @@ return require('packer').startup(function(use)
   }
   use 'ray-x/lsp_signature.nvim'
 
+  -- cmp
+  use 'hrsh7th/cmp-nvim-lsp'
+
   if packer_bootstrap then
     require('packer').sync()
   end
