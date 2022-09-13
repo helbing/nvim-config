@@ -93,20 +93,21 @@ return require('packer').startup(function(use)
   -- test
   use 'vim-test/vim-test'
   use {
-    "nvim-neotest/neotest",
+    'nvim-neotest/neotest',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim"
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'antoinemadec/FixCursorHold.nvim'
     }
   }
 
   -- mason
   use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
   }
+  use 'ray-x/lsp_signature.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

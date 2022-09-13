@@ -80,7 +80,6 @@ map("n", "<Leader>bc", ":BufferLinePickClose<CR>", opt)
 -- telescope
 map('n', '<Leader>fr', ':Telescope oldfiles<CR>', opt)
 map('n', '<Leader>fp', ':Telescope projects<CR>', opt)
-
 map('n', '<Leader>ff', ':Telescope find_files<CR>', opt)
 map('n', '<Leader>fg', ':Telescope live_grep<CR>', opt)
 map('n', '<Leader>fb', ':Telescope buffers<CR>', opt)
@@ -116,13 +115,24 @@ map('n', '<Leader>hd', ':Gitsigns diffthis<CR>', opt)
 map('n', '<Leader>hD', '<cmd>lua require("gitsigns").diffthis("~")<CR>', opt)
 
 -- test
-map('n', '<Leader>Tn', ':TestNearest<CR>',opt)
+map('n', '<Leader>Tn', ':TestNearest<CR>', opt)
 map('n', '<Leader>Tf', ':TestFile<CR>', opt)
 map('n', '<Leader>Ts', ':TestSuite<CR>', opt)
 map('n', '<Leader>Tl', ':TestLast<CR>', opt)
 map('n', '<Leader>Tv', ':TestVisit<CR>', opt)
 
 -- lspconfig
-
+map('n', '<Leader>do', '<cmd>lua vim.diagnostic.open_float<CR>', opt)
+map('n', '<Leader>dj', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opt)
+map('n', '<Leader>dk', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opt)
+map('n', '<Leader>dq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration<CR>', opt)
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition<CR>', opt)
+map('n', 'gh', '<cmd>lua vim.lsp.buf.hover<CR>', opt)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation<CR>', opt)
+map('n', 'gtd', '<cmd>lua vim.lsp.buf.type_definition<CR>', opt)
+map('n', 'gca', '<cmd>lua vim.lsp.buf.code_action<CR>', opt)
+map('n', 'grf', '<cmd>lua vim.lsp.buf.references<CR>', opt)
+map('n', 'grn', '<cmd>lua vim.lsp.buf.rename<CR>', opt)
 
 return M
