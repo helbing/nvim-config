@@ -6,7 +6,7 @@ if (not status2) then return end
 telescope.setup({
   defaults = {
     initial_mode = 'insert',
-    mappings = require('core.keymaps').telescope(),
+    mappings = require('user.core.keymaps').telescope(),
   },
   pickers = {
     find_files = {

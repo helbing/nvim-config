@@ -20,7 +20,7 @@ tree.setup({
     hide_root_folder = false,
     mappings = {
       custom_only = false,
-      list = require('core.keymaps').nvimTree(),
+      list = require('user.core.keymaps').nvimTree(),
     },
     number = false,
     relativenumber = false,

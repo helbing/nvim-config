@@ -1,1 +1,1 @@
-require('core.init')
+require('user.core.init')
