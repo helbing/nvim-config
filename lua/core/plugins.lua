@@ -83,6 +83,30 @@ return require('packer').startup(function(use)
 
   -- gitsigns
   use 'lewis6991/gitsigns.nvim'
+  use {
+    'sindrets/diffview.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
+
+  -- test
+  use 'vim-test/vim-test'
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  }
+
+  -- mason
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
   if packer_bootstrap then
     require('packer').sync()

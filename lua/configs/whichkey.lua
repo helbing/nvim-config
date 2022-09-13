@@ -1,9 +1,6 @@
-local M = {}
+local status, which_key = pcall(require, 'which-key')
+if (not status) then return end
 
-function M.config()
-  local mappings = {}
-  local opts = { prefix = '<Leader>' }
-  require('which-key').register(mappings, opts)
-end
-
-return M
+local mappings = {}
+local opts = { prefix = '<Leader>' }
+which_key.register(mappings, opts)

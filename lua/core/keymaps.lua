@@ -115,4 +115,11 @@ map('n', '<Leader>hB', '<cmd>lua require("gitsigns").blame_line{full=true}<CR>',
 map('n', '<Leader>hd', ':Gitsigns diffthis<CR>', opt)
 map('n', '<Leader>hD', '<cmd>lua require("gitsigns").diffthis("~")<CR>', opt)
 
+-- test
+map('n', '<Leader>Tn', ':TestNearest<CR>',opt)
+map('n', '<Leader>Tf', ':TestFile<CR>', opt)
+map('n', '<Leader>Ts', ':TestSuite<CR>', opt)
+map('n', '<Leader>Tl', ':TestLast<CR>', opt)
+map('n', '<Leader>Tv', ':TestVisit<CR>', opt)
+
 return M
