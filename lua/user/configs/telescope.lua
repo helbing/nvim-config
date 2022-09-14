@@ -1,5 +1,6 @@
 local status, telescope = pcall(require, 'telescope')
 if (not status) then return end
+
 local status2, project = pcall(require, 'project_nvim')
 if (not status2) then return end
 

@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons'
     }
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- lualine
   use {
@@ -90,16 +90,16 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- test
-  use 'vim-test/vim-test'
-  use {
-    'nvim-neotest/neotest',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-      'antoinemadec/FixCursorHold.nvim'
-    }
-  }
+  -- -- test
+  -- use 'vim-test/vim-test'
+  -- use {
+  --   'nvim-neotest/neotest',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-treesitter/nvim-treesitter',
+  --     'antoinemadec/FixCursorHold.nvim'
+  --   }
+  -- }
 
   -- mason
   use {
@@ -108,6 +108,7 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
   }
   use 'ray-x/lsp_signature.nvim'
+  use 'glepnir/lspsaga.nvim'
 
   -- cmp
   use 'hrsh7th/nvim-cmp'
@@ -118,9 +119,13 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
+  use 'onsails/lspkind.nvim'
 
-  -- other
-  use 'gpanders/editorconfig.nvim'
+  -- null-ls
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  -- -- other
+  -- use 'gpanders/editorconfig.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

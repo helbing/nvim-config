@@ -74,25 +74,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/glepnir/dashboard-nvim"
-  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
-  ["indent-blankline.nvim"] = {
+  ["impatient.nvim"] = {
     loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lualine-lsp-progress"] = {
     loaded = true,
@@ -104,40 +94,10 @@ _G.packer_plugins = {
     path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-surround"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/nvim-surround",
-    url = "https://github.com/kylechui/nvim-surround"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -148,31 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["project.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/project.nvim",
-    url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["telescope-env.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/telescope-env.nvim",
-    url = "https://github.com/LinArcX/telescope-env.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/Users/helbing/.local/share/nvim/site/pack/packer/start/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
   }
 }
 

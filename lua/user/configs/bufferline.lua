@@ -26,3 +26,5 @@ bufferline.setup({
     end,
   },
 })
+
+require('user.core.keymaps').bufferline()
