@@ -135,4 +135,20 @@ map('n', 'gca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
 map('n', 'grf', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
 map('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
 
+-- cmp
+M.cmp = function(cmp)
+  return {
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<Esc>'] = cmp.mapping.abort(),
+    ['<Tab>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<CR>'] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.ConfirmBehavior.Replace
+    }),
+  }
+end
+
 return M

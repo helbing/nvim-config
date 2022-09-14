@@ -2,6 +2,9 @@ vim.cmd [[ syntax on ]]
 vim.cmd [[ filetype plugin indent on ]]
 
 local options = {
+  encoding = 'utf-8',
+  fileencoding = 'utf-8',
+
   number = true,
   relativenumber = true,
   mouse = 'a',
