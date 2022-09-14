@@ -7,6 +7,7 @@ local options = {
 
   number = true,
   relativenumber = true,
+  ruler = true,
   mouse = 'a',
 
   -- tabstop
@@ -36,6 +37,8 @@ local options = {
   writebackup = false,
   swapfile = false,
 
+  -- completion
+  completeopt = { 'menu', 'menuone', 'noselect' }
 }
 
 for k, v in pairs(options) do

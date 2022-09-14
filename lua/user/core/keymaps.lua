@@ -137,17 +137,37 @@ map('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
 
 -- cmp
 M.cmp = function(cmp)
+  local select_opt = { behavior = cmp.SelectBehavior.Select }
   return {
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<Up>'] = cmp.mapping.select_prev_item(select_opt),
+    ['<Down>'] = cmp.mapping.select_next_item(select_opt),
+    ['<C-k>'] = cmp.mapping.select_prev_item(select_opt),
+    ['<C-j>'] = cmp.mapping.select_next_item(select_opt),
     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<Esc>'] = cmp.mapping.abort(),
-    ['<Tab>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<CR>'] = cmp.mapping.confirm({
       select = true,
       behavior = cmp.ConfirmBehavior.Replace
     }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      local col = vim.fn.col('.') - 1
+
+      if cmp.visible() then
+        cmp.select_next_item(select_opt)
+      elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        fallback()
+      else
+        cmp.complete()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(select_opt)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
   }
 end
 

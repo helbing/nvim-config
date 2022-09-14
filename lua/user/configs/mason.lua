@@ -7,6 +7,9 @@ if (not status2) then return end
 local status3, lsp_signature = pcall(require, 'lsp_signature')
 if (not status3) then return end
 
+local status4, lspconfig = pcall(require, 'lspconfig')
+if (not status4) then return end
+
 -- modify icons
 local signs = {
   { name = "DiagnosticSignError", text = "" },
@@ -19,6 +22,27 @@ for _, sign in ipairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
+
+vim.diagnostic.config({
+  virtual_text = false,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+  },
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = 'rounded' }
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  { border = 'rounded' }
+)
 
 mason.setup({
   ui = {
@@ -106,5 +130,20 @@ lsp_signature.setup({
   move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
 })
 
+lspconfig.util.default_config = vim.tbl_deep_extend(
+  'force',
+  lspconfig.util.default_config,
+  {
+    on_attach = function(client, bufnr)
+      lsp_signature.on_attach(client, bufnr)
+    end,
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    flags = {
+      debounce_text_changes = 300,
+    },
+  }
+)
+
 -- lspconfig
-require('user.lsp.gopls')
+require('user.lsp.go')
+require('user.lsp.lua')

@@ -119,6 +119,9 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
 
+  -- other
+  use 'gpanders/editorconfig.nvim'
+
   if packer_bootstrap then
     require('packer').sync()
   end
